@@ -1,0 +1,232 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+    <head> 
+        <meta charset="UTF-8"> 
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <title>MiniCoreos</title>         
+        <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href="minicoreos.css"> 
+        <script src="https://cdn.jsdelivr.net/npm/sortablejs@1.10.2/Sortable.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/> 
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    </head>     
+    <body> 
+        <!-- 1. Encabezado: Contiene el título y el botón para mostrar/ocultar el menú -->
+        <div id="masterhead">
+            <div id="head-contain"> 
+                <div id="start">
+                    <small id="small-start-1">mini</small> 
+                    <h1 class="logo"><img src="icons/mini.svg" alt="Minicoreos"/></h1> <small id="small-start-2">coreos</small>
+                </div>                 
+                <!--  Botones de acción: maneja MostrarCoreo -->                 
+                <div id="medio1"> 
+                    <!-- Botón de agregar -->
+                    <div class="select-container">
+                        <select id="duracionTotal" aria-label="Duración total">
+                            <option value="32">Una Frase</option>
+                            <option value="64">Dos Frases</option>
+                            <option value="96">Tres Frases</option>
+                            <option value="128">Chorus</option>
+                            <option value="48">Blues Chorus</option>
+                            <option value="custom">Personalizada</option>
+                        </select>
+                        <svg>
+                            <use xlink:href="#select-arrow-down"></use>
+                        </svg>
+                    </div>
+                    <div class="input-container">
+                        <input type="number" id="duracionTotalPersonalizada" placeholder="Beats">
+                    </div>
+                    <!-- SVG Sprites-->
+                    <svg class="sprites">
+                        <symbol id="select-arrow-down" viewbox="0 0 10 6">
+                            <polyline points="1 1 5 5 9 1"></polyline>
+                        </symbol>
+                    </svg>
+                    <button id="generarCoreografia" class="button custom-button">Generar coreografía</button>
+                </div>                 
+                <div id="final1">
+                    <div class="menuDrop-container">
+                        <img src="icons/3dots-empty.svg" id="menu-button"/>
+                        <div class="dropdown">
+                            <a class="dropdown-item" href="#">
+                              Favoritos
+                              <!-- Aquí es donde agregaremos las coreografías y las carpetas -->
+                              <div class="dropdown-submenu">
+                                <ul id="favoritos-lista"></ul>
+                              </div>
+                            </a>
+                          </div>
+                          
+                    </div>
+                </div>                
+            </div>
+            <div class="separator"></div>
+        </div>         
+        <div id="master-area">
+            <div id="area-contain">
+                <!-- 2. Menú de pasos de baile: Contiene las categorías y los pasos de baile, que se generan dinámicamente desde el archivo JS -->                 
+                <aside id="menuPasos"> 
+                    <ul id="categoriasPasos"> 
+                        <!-- Las categorías y pasos de baile se generarán dinámicamente desde el archivo JS -->                         
+                    </ul>                     
+                </aside>                 
+                <!-- 4. Area de trabajo-->                 
+                <section id="areaPrincipal"> 
+                    <div id="areaTrabajo"> 
+                        <div id="encabezadoTrabajo"> 
+                            <!-- Contenedor del ícono de pasos iniciales y su barra -->                             
+                            <div class="icono-container"> 
+                                <div class="icono-wrapper"> <i id="iconoIniciales" class="fas fa-flag"></i>
+                                    <span class="icono-texto">Iniciales</span> <span class="icono-barra"></span> 
+                                </div>                                 
+                            </div>                             
+                            <!-- Contenedor del ícono de pasos medios y su barra -->                             
+                            <div class="icono-container"> 
+                                <div class="icono-wrapper"> <i id="iconoMedios" class="fas fa-exchange-alt"></i> <span class="icono-texto">Medios</span>
+                                    <span class="icono-barra"></span> 
+                                </div>                                 
+                            </div>                             
+                            <!-- Contenedor del ícono de pasos finales y su barra -->                             
+                            <div class="icono-container"> 
+                                <div class="icono-wrapper"> <i id="iconoFinales" class="fas fa-flag-checkered"></i> <span class="icono-texto">Finales</span>
+                                    <span class="icono-barra"></span> 
+                                </div>                                 
+                            </div>                             
+                        </div>                         
+                        <!-- Subcontenedor de pasos iniciales -->                         
+                        <div class="subcontenedor" id="iniciales" data-selected="true" data-icono-id="iconoIniciales"> 
+                            <h3>Iniciales</h3> 
+                            <!-- Aquí se colocarán los pasos de baile iniciales -->                             
+                        </div>                         
+                        <!-- Subcontenedor de pasos medios -->                         
+                        <div class="subcontenedor" id="medios" data-selected="false" data-icono-id="iconoMedios"> 
+                            <h3>Medios</h3> 
+                            <!-- Aquí se colocarán los pasos de baile medios -->                             
+                        </div>                         
+                        <!-- Subcontenedor de pasos finales -->                         
+                        <div class="subcontenedor" id="finales" data-selected="false" data-icono-id="iconoFinales"> 
+                            <h3>Finales</h3> 
+                            <!-- Aquí se colocarán los pasos de baile finales -->                             
+                        </div>                         
+                        <!-- Barra separadora y contenedor de acciones -->                         
+                        <div class="acciones-wrapper"> 
+                            <div class="barra-separadora"></div>                             
+                            <div class="acciones-container"><i class="fas fa-check-double"></i> 
+                                <div id="iconoPapelera"> <i class="fas fa-trash-can"></i>
+                                </div>
+                                <i class="fas fa-redo"></i> <i class="fas fa-undo"></i> <i class="fas fa-filter"></i> 
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                    <!-- 5. Sección Mostrar coreografía: Aquí se mostrará la coreografía generada -->                     
+                    <div id="containCoreo"> 
+                        <div id="coreografia" class="scrollarea"> 
+                            <!-- Aquí se mostrará la coreografía generada -->                             
+                        </div>
+                        <div class="acciones-coreowrapper"> 
+                            <div class="acciones-coreo"> 
+                                <div class="barra-separadorac"></div>                                 
+                                <button id="navegarAtras" class="button custom-buttonizq">&#60;</button>                                 
+                                <button id="navegarAdelante" class="button custom-buttonder">&#62;</button>                                 
+                                <div id="iconoSave"> <i class="fas fa-bookmark"></i>
+                                </div>                                 
+                            </div>                             
+                        </div>                         
+                    </div>                     
+                </section>                 
+                <!--Menu agregar paso-->
+                <aside id="menuCrearpasos"> 
+                    <button id="agregar" class="button custom-button">Crear Paso</button>
+                </aside>
+            </div>
+        </div>
+        <!--Modal agregar paso-->
+        <div id="modalAgregarPaso" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Agregar nuevo paso</h2>
+                <form id="nuevoPasoForm">
+                    <div id="modalPasoProp">
+                        <label for="nombre" class="visually-hidden">Nombre:</label>
+                        <input type="text" id="nombre" placeholder="Nombre del paso" required class="textfield">
+                        <label for="duracion" class="visually-hidden">Duración:</label>
+                        <input type="number" id="duracion" placeholder="Beats" required class="numberform2">
+                        <div class="select-container2">
+                            <label for="posicionInicial" class="visually-hidden">Posición inicial:</label>
+                            <select id="posicionInicial" required>
+                                <option value="" disabled selected>Posición inicial</option>
+                                <option value="cerrada">Cerrada</option>
+                                <option value="abierta">Abierta</option>
+                                <option value="ambos">Ambos</option>
+                            </select>
+                            <label for="posicionFinal" class="visually-hidden">Posición final:</label>
+                            <select id="posicionFinal" required>
+                                <option value="" disabled selected>Posición Final</option>
+                                <option value="cerrada">Cerrada</option>
+                                <option value="abierta">Abierta</option>
+                                <option value="ambos">Ambos</option>
+                            </select>
+                            <label for="frente" class="visually-hidden">Frente</label>
+                            <select id="frente" required>
+                                <option value="" disabled selected>Frente</option>
+                                <option value="izquierda-derecha">Izquierda a derecha</option>
+                                <option value="derecha-izquierda">Derecha a izquierda</option>
+                                <option value="ambos">Ambos</option>
+                            </select>
+                            <label for="mismoFrente" class="visually-hidden">¿Termina en el mismo frente?</label>
+                            <select id="mismoFrente">
+                                <option value="">¿Termina en el mismo frente?</option>
+                                <option value="true">Sí</option>
+                                <option value="false">No</option>
+                            </select>
+                        </div>
+                    </div>
+                    <fieldset>
+                        <legend>Etapa</legend>
+                        <input type="checkbox" id="inicial" name="etapa" value="Inicial">
+                        <label for="inicial">Inicial</label>
+                        <input type="checkbox" id="medio" name="etapa" value="Medio">
+                        <label for="medio">Medio</label>
+                        <input type="checkbox" id="final" name="etapa" value="Final">
+                        <label for="final">Final</label>
+                    </fieldset>
+                    <button type="submit" class="btn-customodal">Agregar paso</button>
+                </form>
+            </div>
+        </div>
+        <!-- El Modal Fav -->
+        <div id="favModal" class="modalFav">
+            <!-- Contenido del Modal -->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close">&times;</span>
+                    <h2>Guardar Coreografía</h2>
+                </div>
+                <div class="modal-body">
+                    <label for="nombre">Nombre:</label><br>
+                    <input type="text" id="nombre" name="nombre"><br>
+                    <label for="carpetas">Carpeta:</label><br>
+                    <select name="carpetas" id="carpetas">
+                        <option value="">Seleccione una carpeta...</option>
+                        <option value="Crear Carpeta">Crear Carpeta</option>
+                        <!-- Aquí van las carpetas -->
+                    </select>
+                    <div id="nuevaCarpetaDiv" style="display: none;">
+                        <label for="nuevaCarpeta">Nueva Carpeta:</label><br>
+                        <input type="text" id="nuevaCarpeta">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button id="hecho">Hecho</button>
+                    <button id="quitar">Quitar</button>
+                </div>
+            </div>
+        </div>
+        
+        <script type="module" src="minicoreos.js"></script>
+    </body>
+</html>

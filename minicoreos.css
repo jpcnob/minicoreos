@@ -1,0 +1,1283 @@
+/* minicoreos.css */
+/* Estilos generales para el cuerpo del documento */
+body {
+    font-family: 'Poppins', sans-serif;
+    text-shadow: 0 0 2px #183153(0, 0, 0, 0.3);
+    margin: 0;
+    padding: 0;
+    color: #5f697d;
+    top: 0;
+    left: 0;
+}
+
+#masterhead {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    background-color: #ffffff;
+    z-index: 3;
+}
+
+/* Estilos para la cabecera, incluyendo la barra de navegación y el título */
+#head-contain {
+    height: 69px;
+    padding: 0 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #ffffff;
+    z-index: 3;
+    position: relative;
+}
+
+#small-start-1 {
+    font-size: 22px;
+    padding-right: 2px;
+}
+
+#small-start-2 {
+    font-size: 22px;
+    padding-right: 0px;
+}
+
+.separator {
+    height: 1px;
+    background-image: linear-gradient(to right, transparent, #e0e0e0, transparent);
+}
+
+#start {
+    background-color: #ffffff;
+    display: flex;
+    top: 0px;
+    left: 0px;
+    align-items: center;
+    width: 20%;
+    justify-content: center;
+}
+
+#medio1 {
+    display: flex;
+    z-index: 3;
+    background-color: #ffffff;
+    align-items: center;
+    width: 63%;
+    justify-content: start;
+}
+
+#final1 {
+    position: flex;
+    display: flex;
+    align-items: center;
+    width: 7%;
+    justify-content: center;
+}
+
+#master-area {
+    position: absolute;
+    top: 70px;
+    width: 100%;
+    transform: translateY(0);
+    transition: transform 0.3s ease;
+    z-index: 1;
+}
+
+#area-contain {
+    height: auto;
+    padding: 0 16px;
+    display: flexbox;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#toggleMenu {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    position: relative;
+    padding-left: 14px;
+    width: 0px;
+}
+
+/* Estilos para el menú de pasos de baile */
+#menuPasos {
+    background-color: #ffffff;
+    overflow-y: auto;
+    width: 20%;
+    height: 500px;
+    z-index: 1;
+}
+
+/* Estilos para la barra de desplazamiento en navegadores WebKit */
+#menuPasos::-webkit-scrollbar {
+    width: 7px;
+    visibility: hidden;
+    transition: visibility 0.3s;
+}
+
+#menuPasos:hover::-webkit-scrollbar {
+    visibility: hidden;
+}
+
+#menuPasos::-webkit-scrollbar-thumb {
+    background-color: #999999;
+    border-radius: 3px;
+    visibility: hidden;
+}
+
+#menuPasos::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+/* Estilos para las categorías y pasos de baile en el menú */
+#categoriasPasos {
+    list-style-type: none;
+    color: #183153;
+    padding-left: 0px;
+    padding-right: 14px;
+    margin-top: 1px;
+}
+
+.categoria h3 {
+    font-size: 17px;
+    font-weight: normal;
+    color: #5f697d;
+    margin-bottom: 0px;
+    height: 40px;
+    margin-top: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 14px;
+}
+
+/* estilos para los iconos catego */
+.categoria h3 img {
+    width: 24px;
+    height: 100%;
+    padding-right: 14px;
+}
+
+/* Estilos para los pasos de baile dentro de las categorías */
+.categoria .pasos {
+    display: none;
+    padding-left: 0px;
+    margin-left: 11px;
+}
+
+li .paso {
+    display: display;
+    list-style-type: none;
+    padding-left: 45px;
+    cursor: pointer;
+    font-size: 14px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin-bottom: 1px;
+}
+
+/* Estilos para mostrar los pasos de baile cuando una categoría está activa */
+.categoria.active .pasos {
+    display: block;
+}
+
+/* Estilos para el hover de las categorías y pasos */
+.categoria h3:hover,
+.categoria.active h3:hover {
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+.categoria .pasos li:hover,
+.categoria.active .pasos li:hover {
+    background-color: #ddd;
+    border-radius: 10px;
+}
+
+.categoria .pasos .seleccionado {
+    background-color: #538dd7;
+    border-radius: 10px;
+    color: #ffffff;
+}
+
+/* Estilos para .acciones COREO */
+.select-container {
+    position: relative;
+    min-width: 150px;
+}
+
+.select-container svg {
+    position: absolute;
+    display: flex;
+    right: 2px;
+    top: calc(50% - 3px);
+    width: 10px;
+    height: 6px;
+    stroke-width: 2px;
+    stroke: #9098a9;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
+}
+
+.select-container select {
+    padding: 7px 0px 7px 12px;
+    width: 100%;
+    border: 1px solid #e8eaed;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 1px 3px -2px #9098a9;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: all 150ms ease;
+    height: 35px;
+    margin: 0 10px;
+}
+
+.select-container select:required:invalid {
+    color: #5a667f;
+}
+
+.select-container select option {
+    color: #223254;
+}
+
+.select-container select option[value=""][disabled] {
+    display: none;
+}
+
+.select-container select:focus {
+    outline: none;
+    border-color: #93BFCF;
+    box-shadow: 0 0 0 2px #93BFCF;
+}
+
+.select-container select:hover + svg {
+    stroke: #93BFCF;
+    border-color: #93BFCF;
+}
+
+.select-container select:hover:hover {
+    border-color: #93BFCF;
+}
+
+.sprites {
+    position: absolute;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+}
+
+/* Para Firefox */
+.select-container select {
+    -moz-appearance: none;
+    appearance: none;
+
+    /* Resto de tus estilos... */
+}
+
+/* Para Chrome, Safari y Opera */
+.select-container select::-ms-expand {
+    display: none;
+}
+
+/* Para Internet Explorer */
+.select-container select::-ms-expand {
+    display: none;
+}
+
+/* Para Edge */
+.select-container select::-ms-expand {
+    display: none;
+}
+
+.input-container {
+    display: flex;
+    margin-left: 20px;
+}
+
+.input-container input[type="number"] {
+    padding: 7px 12px 7px 12px;
+    border: 1px solid #e8eaed;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 1px 3px -2px #9098a9;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: all 150ms ease;
+    width: 55px;
+    height: 19px;
+    margin-right: 10px;
+    display: none;
+}
+
+.input-container input[type="number"]:required:invalid {
+    color: #5a667f;
+}
+
+.input-container input[type="number"]::placeholder {
+    color: #223254;
+}
+
+.input-container input[type="number"]:focus {
+    outline: none;
+    border-color: #93BFCF;
+    box-shadow: 0 0 0 2px #93BFCF;
+}
+
+.input-container input[type="number"]:hover {
+    border-color: #93BFCF;
+}
+
+/* Boton Crear Coreografía! */
+.button {
+    align-items: center;
+    appearance: none;
+    background-color: #fff;
+    border-radius: 24px;
+    border-style: none;
+    box-shadow: rgba(0, 0, 0, .2) 0 3px 5px -1px, rgba(0, 0, 0, .14) 0 6px 10px 0, rgba(0, 0, 0, .12) 0 1px 18px 0;
+    box-sizing: border-box;
+    color: #3c4043;
+    cursor: pointer;
+    display: flex;
+    fill: currentcolor;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    font-weight: wght@300;
+    height: 35px;
+    justify-content: center;
+    line-height: normal;
+    max-width: 100%;
+    overflow: visible;
+    padding: 2px 24px;
+    text-align: center;
+    text-transform: none;
+    transition: box-shadow 280ms cubic-bezier(.4, 0, .2, 1), opacity 15ms linear 30ms, transform 270ms cubic-bezier(0, 0, .2, 1) 0ms;
+    touch-action: manipulation;
+    width: auto;
+    will-change: transform, opacity;
+    z-index: 0;
+    left: 0px;
+    position: absolute;
+}
+
+.button:hover {
+    background: #F6F9FE;
+    color: #6096B4;
+}
+
+.button:active {
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    outline: none;
+}
+
+.button:focus {
+    outline: none;
+    border: 2px solid #6096B4;
+}
+
+.button:not(:disabled) {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+    position: relative;
+}
+
+.button:not(:disabled):hover {
+    box-shadow: rgba(60, 64, 67, .3) 0 2px 3px 0, rgba(60, 64, 67, .15) 0 6px 10px 4px;
+}
+
+.button:not(:disabled):focus {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+.button:not(:disabled):active {
+    box-shadow: rgba(60, 64, 67, .3) 0 4px 4px 0, rgba(60, 64, 67, .15) 0 8px 12px 6px;
+}
+
+.button-17:disabled {
+    box-shadow: rgba(60, 64, 67, .3) 0 1px 3px 0, rgba(60, 64, 67, .15) 0 4px 8px 3px;
+}
+
+/* Búsqueda buton */
+.input-container {
+    display: flex;
+}
+
+.input-container input[type="text"] {
+    padding: 7px 12px 7px 12px;
+    border: 1px solid #e8eaed;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 1px 3px -2px #9098a9;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: all 150ms ease;
+    width: 0px;
+    height: 18px;
+    margin-right: 10px;
+    visibility: hidden;
+}
+
+.input-container:hover input[type="text"] {
+    width: 200px;
+    visibility: visible;
+}
+
+.input-container input[type="text"]:required:invalid {
+    color: #5a667f;
+    display: none;
+}
+
+.input-container input[type="text"]::placeholder {
+    color: #223254;
+}
+
+.input-container input[type="text"]:focus {
+    outline: none;
+    border-color: #93BFCF;
+    box-shadow: 0 0 0 2px #93BFCF;
+}
+
+.input-container input[type="text"]:hover {
+    border-color: #93BFCF;
+}
+
+#search-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    display: none;
+}
+
+/* Boton DropDown dots */
+.menuDrop-container img {
+    width: 32px;
+    border-radius: 100%;
+    border: 0;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.menuDrop-container img:hover {
+    background-color: #e0e0e0;
+}
+
+.menuDrop-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Estilos para el contenedor del menú desplegable */
+.dropdown {
+    display: none;
+    position: absolute;
+    min-width: 140px;
+    z-index: 4;
+    box-shadow: 0 0 10px 10px rgba(0,0,0,0.2);
+    border-radius: 0 0 10px 10px;
+    transition: all .2s;
+    transform-origin: top;
+    right: 8px;
+    top: 69px;
+    width: 140px;
+    background-color: #ffffff;
+}
+
+/* Estilos para el enlace 'Favoritos' */
+.dropdown a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Rest of your css */
+.menuDrop-container:hover .dropdown {
+    display: none;
+
+    /* We want the dropdown to show on click, not on hover */
+}
+
+/* Estilos items */
+.dropdown-item {
+    padding: 10px;
+    color: #000;
+    text-decoration: none;
+    display: block;
+
+    /* ...otros estilos... */
+}
+
+.dropdown-item:hover {
+    background-color: #f1f1f1;
+
+    /* ...otros estilos... */
+}
+
+
+/*Submenu Fav*/
+
+.dropdown-submenu {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+  }
+  
+  .dropdown-item:hover .dropdown-submenu {
+    display: block;
+  }
+  
+/* Pop Up Agregar paso */
+.modal {
+    position: absolute;
+    z-index: 9;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: none;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 2.5% auto 15%;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 29%;
+    border-radius: 10px;
+    z-index: 9;
+    position: relative;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalPasoProp {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-content: space-between;
+    row-gap: 7px;
+}
+
+#modalPasoProp,
+.select-container2 {
+    display: flex;
+    flex-direction: column;
+    row-gap: 7px;
+
+    /* otros estilos... */
+}
+
+/* Estilos para los elementos nuevos Subcontenedores */
+#areaTrabajo {
+    background-color: #f5f5f5;
+    min-height: 300px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    width: 500px;
+    border: 1px solid #93BFCF;
+    border-radius: 10px;
+    margin-bottom: 80px;
+    order: 1;
+}
+
+#areaTrabajo:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+#encabezadoTrabajo {
+    display: flex;
+    position: absolute;
+    background-color: f5f5f5;
+    padding-top: 5px;
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 5px;
+    width: auto;
+    top: 0;
+    left: 0px;
+    z-index: 1;
+    border-bottom: 1px solid #e0e0e0;
+    right: 0px;
+    justify-content: space-between;
+}
+
+/* posicionar los elementos internos en relación con su contenedor. */
+.icono-container {
+    position: relative;
+}
+
+/* Barra debajo de íconos */
+.icono-barra {
+    display: none;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 99%;
+    height: 3px;
+    background-color: #93BFCF !important;
+}
+
+/* Estilo para el ícono de pasos iniciales */
+#iconoIniciales {
+    font-size: 20px;
+    position: relative;
+    bottom: 1px;
+    position: relative;
+    bottom: -3px;
+    left: 30px;
+}
+
+/* Estilo para el ícono de pasos medios */
+#iconoMedios {
+    font-size: 18.7px;
+    position: relative;
+    bottom: -3px;
+    left: 30px;
+}
+
+/* Estilo para el ícono de pasos finales */
+#iconoFinales {
+    font-size: 20px;
+    position: relative;
+    bottom: -3px;
+    left: 30px;
+}
+
+/* Estilo para texto de iconos */
+.icono-texto {
+    margin-left: 7px;
+    position: inherit;
+    position: relative;
+    bottom: -3px;
+    left: 30px;
+}
+
+/* se aplica al borde contedor de los iconos */
+.icono-wrapper {
+    display: inline-block;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+    width: 145px;
+    height: 30px;
+}
+
+.icono-wrapper:hover {
+    background-color: #e0e0e0;
+}
+
+/* Aplica a los tres "subcontenedores", oculta estos por defecto */
+.subcontenedor {
+    display: none;
+    width: 107%;
+    position: relative;
+    bottom: -40px;
+    height: 227px;
+    min-width: -11px;
+    left: -17px;
+    max-height: 230px;
+    overflow: auto;
+}
+
+.subcontenedor::-webkit-scrollbar {
+    width: 10px;
+    width: thin;
+    color: #999999 transparent;
+    visibility: hidden;
+}
+
+.subcontenedor::-webkit-scrollbar-thumb {
+    background-color: #999999;
+    border-radius: 3px;
+    visibility: hidden;
+}
+
+#menuPasos::-webkit-scrollbar-thumb:hover {
+    background: #555;
+
+    /* Color de la barra al pasar el mouse */
+}
+
+.subcontenedor::-webkit-scrollbar-track {
+    background-color: transparent;
+    visibility: hidden;
+}
+
+/* Cambiando su color */
+.iconoActivo {
+    color: #93BFCF;
+}
+
+/* oculta nombres subcontenedores */
+.subcontenedor h3 {
+    display: none;
+}
+
+/* Estilos para los pasos dentro de los subcontenedores de selección */
+.subcontenedor .paso {
+    position: relative;
+    display: inline-flex;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 10px;
+    cursor: pointer;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.subcontenedor .paso:hover {
+    background-color: #ddd;
+}
+
+.subcontenedor .paso.seleccionado {
+    background-color: #538dd7;
+    color: #ffffff;
+}
+
+.fa-xmark {
+    padding-left: 10px;
+}
+
+.fa-xmark:hover {
+    color: red;
+}
+
+/* Estilos para los botones del pie contedores */
+/* contenedor */
+.acciones-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.barra-separadora {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.acciones-container {
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.acciones-container i {
+    cursor: pointer;
+    margin: 0 10px;
+    border-radius: 50px;
+    padding: 8px;
+    font-size: 26px;
+}
+
+.acciones-container i:hover {
+    background-color: #e0e0e0;
+}
+
+.custom-buttonizq {
+    display: flex;
+    margin-right: 4px;
+}
+
+.custom-buttonder {
+    display: flex;
+}
+
+/* Estilos para la sección mostrarCoreografia */
+#containCoreo {
+    background-color: #f5f5f5;
+    min-height: 300px;
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+    width: 500px;
+    border: 1px solid #93BFCF;
+    border-radius: 10px;
+    margin-bottom: 60px;
+    order: 1;
+}
+
+#coreografia {
+    background-color: #f5f5f5;
+    position: relative;
+    order: 2;
+    overflow: auto;
+    margin-bottom: 12px;
+    display: flex;
+    flex-direction: column;
+    width: 102%;
+    height: 87%;
+}
+
+#containCoreo:hover {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+#coreografia .pasocoreo {
+    /* Estilos para los pasos dentro del contenedor #coreografia */
+    position: relative;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    border-radius: 10px;
+    cursor: pointer;
+    list-style-type: none;
+
+    /* Agrega otros estilos según tus necesidades */
+}
+
+#coreografia .pasocoreo h3 {
+    /* Estilos para el título de los pasos */
+    font-size: 16px;
+    color: #183153;
+
+    /* Agrega otros estilos según tus necesidades */
+}
+
+#coreografia .pasocoreo ul {
+    /* Estilos para la lista de información adicional */
+    list-style-type: none;
+
+    /* Agrega otros estilos según tus necesidades */
+}
+
+#coreografia .pasocoreo li {
+    /* Estilos para los elementos de la lista de información adicional */
+    font-size: 14px;
+    color: #5f697d;
+
+    /* Agrega otros estilos según tus necesidades */
+}
+
+/* Acciones Coreo */
+.acciones-coreowrapper {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    padding-bottom: 10px;
+}
+
+.barra-separadorac {
+    height: 1px;
+    background-color: #e0e0e0;
+    margin-bottom: 10px;
+}
+
+.acciones-coreo {
+    display: inline-flex;
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Save */
+#iconoSave {
+    cursor: pointer;
+    margin: 0 10px;
+    border-radius: 50px;
+    padding: 8px;
+    font-size: 26px;
+}
+
+#iconoSave:hover {
+    background-color: #e0e0e0;
+}
+
+#areaPrincipal {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    padding-top: 31px;
+    height: 500px;
+    padding-left: 50px;
+    padding-right: 47px;
+}
+
+#areaPrincipal::-webkit-scrollbar {
+    width: 7px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+#areaPrincipal:hover::-webkit-scrollbar {
+    opacity: 1;
+}
+
+#areaPrincipal::-webkit-scrollbar-thumb {
+    background-color: #999999;
+    border-radius: 5px;
+}
+
+#areaPrincipal::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#menuCrearpasos {
+    background-color: #ffffff;
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.logo img {
+    font-family: 'Poppins', sans-serif;
+    width: 40px;
+    height: 100%;
+}
+
+/* campo nombre */
+.textfield {
+    padding: 7px 12px 7px 12px;
+    border: 1px solid #e8eaed;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 1px 3px -2px #9098a9;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: all 150ms ease;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+.textfield:required:invalid {
+    color: #5a667f;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+.textfield::placeholder {
+    color: #223254;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+.textfield:focus {
+    outline: none;
+    border-color: #93BFCF;
+    box-shadow: 0 0 0 2px #93BFCF;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+.textfield:hover {
+    border-color: #93BFCF;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+/* number form */
+.numberform2 {
+    padding: 7px 12px 7px 12px;
+    border: 1px solid #e8eaed;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 1px 3px -2px #9098a9;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: all 150ms ease;
+    width: 55px;
+    height: 19px;
+    margin-right: 10px;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+.numberform2:required:invalid {
+    color: #5a667f;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+.numberform2::placeholder {
+    color: #223254;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+.numberform2:focus {
+    outline: none;
+    border-color: #93BFCF;
+    box-shadow: 0 0 0 2px #93BFCF;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+.numberform2:hover {
+    border-color: #93BFCF;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+.select-container2 {
+    position: relative;
+    min-width: 150px;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+.select-container2 svg {
+    position: absolute;
+    display: flex;
+    right: 2px;
+    top: calc(50% - 3px);
+    width: 10px;
+    height: 6px;
+    stroke-width: 2px;
+    stroke: #9098a9;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    pointer-events: none;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+.select-container2 select {
+    padding: 7px 12px;
+    width: 100%;
+    border: 1px solid #e8eaed;
+    border-radius: 5px;
+    background: #fff;
+    box-shadow: 0 1px 3px -2px #9098a9;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: all 150ms ease;
+    height: 35px;
+    margin-top: 0;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+.select-container2 select:required:invalid {
+    color: #5a667f;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+.select-container2 select option {
+    color: #223254;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+.select-container2 select option[value=""][disabled] {
+    display: none;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+.select-container2 select:focus {
+    outline: none;
+    border-color: #93BFCF;
+    box-shadow: 0 0 0 2px #93BFCF;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+.select-container2 select:hover + svg {
+    stroke: #93BFCF;
+    border-color: #93BFCF;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+.select-container2 select:hover:hover {
+    border-color: #93BFCF;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+.select-container2 select {
+    -moz-appearance: none;
+    appearance: none;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+.select-container2 select::-ms-expand {
+    display: none;
+
+    /* puedes cambiar o remover cualquier atributo aquí */
+}
+
+/* Ocultar labels form */
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.btn-customodal {
+    padding: 7px 12px;
+    width: 100%;
+    border: 1px solid #93BFCF;
+    border-radius: 5px;
+    background: #93BFCF;
+    box-shadow: 0 1px 3px -2px #9098a9;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    transition: all 150ms ease;
+    height: 35px;
+    color: #fff;
+
+    /* cambio el color de texto a blanco */
+    margin-top: 7px;
+    text-align: center;
+
+    /* centra el texto */
+}
+
+.btn-customodal:hover {
+    border-color: #93BFCF;
+    box-shadow: 0 0 0 2px #93BFCF;
+}
+
+.btn-customodal:focus {
+    outline: none;
+    border-color: #93BFCF;
+    box-shadow: 0 0 0 2px #93BFCF;
+}
+
+/* Fieldset */
+:root {
+    --checkbox-border-size: 2px;
+    --checkbox-size: 16px;
+    --checkbox-color: #93BFCF;
+    --checkbox-color-hover: #93BFCF;
+    --checkbox-color-checked: #fff;
+}
+
+fieldset {
+    display: flex;
+    justify-content: space-around;
+
+    /* distribuye equitativamente los elementos */
+    border: 1px solid #93BFCF;
+    align-items: center;
+
+    /* color del borde del fieldset */
+}
+
+fieldset input[type="checkbox"] {
+    appearance: none;
+    background: none;
+    border: var(--checkbox-border-size) solid var(--checkbox-color);
+    border-radius: 2px;
+    cursor: pointer;
+    height: var(--checkbox-size);
+    width: var(--checkbox-size);
+    margin: 0;
+    outline: 0;
+    padding: 0;
+    position: relative;
+}
+
+fieldset input[type="checkbox"]:hover {
+    border-color: var(--checkbox-color-hover);
+}
+
+fieldset input[type="checkbox"]:checked {
+    background-color: var(--checkbox-color);
+}
+
+fieldset input[type="checkbox"]:checked:after {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 6px;
+    border: solid var(--checkbox-color-checked);
+    border-width: 0 2px 2px 0;
+    top: 4px;
+
+    /* ajusta la posición vertical */
+    left: 6px;
+
+    /* ajusta la posición horizontal */
+    transform: rotate(45deg);
+}
+
+/* Modal Fav */
+.modalFav {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+.modalFav-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+  
